@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Raja Super Specialty Eye Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+  /* :root{
+    --ink:#16211F;
+    --paper:#FAF7F1;
+    --paper-dim:#F1ECE1;
+    --teal-deep:#0E3B3C;
+    --teal-mid:#3E7C7B;
+    --iris-gold:#C7963C;
+    --clay:#B4522F;
+    --line: rgba(22,33,31,0.12);
+    --ring: rgba(199,150,60,0.5);
+    --shadow: 0 20px 50px -25px rgba(14,59,60,0.35);
+  } */
+
+:root{
+  --ink: #23152F;
+
+  /* Backgrounds */
+  --paper: #FFFCFE;
+  --paper-dim: #F8F2FA;
+
+  /* Primary Brand */
+  --teal-deep: #7A2E6E;      /* Logo purple */
+  --teal-mid: #B64D95;       /* Logo pink-purple */
+
+  /* Accents */
+  --iris-gold: #E76AAE;      /* Bright pink accent */
+  --clay: #D8A6D3;           /* Soft lavender */
+
+  /* Borders & Effects */
+  --line: rgba(122,46,110,.10);
+  --ring: rgba(182,77,149,.25);
+  --shadow: 0 20px 50px -25px rgba(122,46,110,.20);
+
+  /* Extra gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #FFF8FD 0%,
+    #F9F0FB 30%,
+    #F3E3F6 65%,
+    #FCECF6 100%
+  );
+
+  --gradient-hero: radial-gradient(
+      circle at top right,
+      rgba(231,106,174,.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(186,133,201,.18),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #FFFCFE 0%,
+      #FAF4FC 45%,
+      #F5EEF9 100%
+    );
+
+  --gradient-card: linear-gradient(
+    180deg,
+    #FFFFFF 0%,
+    #FDF8FD 100%
+  );
+
+  --gradient-button: linear-gradient(
+    135deg,
+    #7A2E6E,
+    #C54B98
+  );
+}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal-mid);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--iris-gold);
+    display:inline-block;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  :focus-visible{outline:2px solid var(--iris-gold); outline-offset:3px;}
+  .wrap{max-width:1390px;margin:0 auto;padding:0 28px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 30px;
+    background:var(--teal-deep);
+    color:var(--paper);
+    border:none;
+    border-radius:100px;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:0.92rem;
+    cursor:pointer;
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+    box-shadow: 0 10px 25px -12px rgba(14,59,60,0.6);
+  }
+  .btn:hover{  background: var(--teal-mid);
+    color:#fff;; transform:translateY(-2px); color:var(--ink);}
+  .btn.ghost{
+   color:#fff;
+    border:1px solid rgba(122,46,110,.25);
+    box-shadow:none;
+  }
+  .btn.ghost:hover{ background:rgba(122,46,110,.08); color:var(--paper);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(250,247,241,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    max-width:1380px; margin:0 auto; padding:16px 28px;
+  }
+  .logo{display:flex; align-items:center; gap:12px;}
+  .logo .mark{
+    width:20px;height:20px; border-radius:50%;
+    background: radial-gradient(circle at 35% 35%, var(--iris-gold) 0%, var(--teal-deep) 55%, var(--ink) 100%);
+    position:relative; flex-shrink:0;
+    box-shadow: inset 0 0 0 2px rgba(250,247,241,0.5);
+  }
+  .logo .mark::after{
+    content:"";position:absolute; inset:14px; border-radius:50%; background:var(--ink);
+  }
+  .logo-text{font-family:'Fraunces',serif; line-height:1.1;}
+  .logo-text b{font-size:1.05rem; display:block;}
+  .logo-text span{font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; color:var(--teal-mid); text-transform:uppercase;}
+  .nav-links{display:flex; gap:32px; list-style:none; margin:0; padding:0; font-size:0.92rem; font-weight:500;}
+  .nav-links a{position:relative; padding:6px 0;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--iris-gold);transition:width .25s ease;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+  .burger{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .burger span{display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; transition:.3s;}
+
+  /* ---------- NAV DROPDOWN (Services) ---------- */
+  .has-dropdown{position:relative;}
+  .drop-trigger{display:inline-flex; align-items:center; gap:6px; cursor:pointer; background:none; border:none; font:inherit; color:inherit; padding:0px 0;}
+  .drop-trigger svg{transition:transform .25s ease;}
+  .has-dropdown:hover .drop-trigger svg, .has-dropdown.open .drop-trigger svg{transform:rotate(180deg);}
+  .dropdown-panel{
+    position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(6px);
+    width:300px; background:var(--paper); border:1px solid var(--line); border-radius:16px;
+    box-shadow:var(--shadow); padding:10px; opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease; z-index:120;
+  }
+  .has-dropdown:hover .dropdown-panel, .has-dropdown.open .dropdown-panel{
+    opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
+  }
+  .dropdown-panel a{
+    display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:10px;
+    font-size:0.88rem; font-weight:500; color:var(--ink);
+  }
+  .dropdown-panel a::after{display:none;}
+  .dropdown-panel a:hover{background:var(--paper-dim); color:var(--teal-deep);}
+  .dropdown-panel .d-ic{
+    width:30px; height:30px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    background:var(--paper-dim); color:var(--teal-deep);
+  }
+  .dropdown-panel a:hover .d-ic{background:var(--teal-deep); color:var(--paper);}
+  @media (max-width:980px){
+    .dropdown-panel{position:static; transform:none; width:auto; box-shadow:none; border:none; padding:6px 0 0 14px; opacity:1; visibility:visible; pointer-events:auto; display:none; background:transparent;}
+    .has-dropdown.open .dropdown-panel{display:block;}
+    .drop-trigger{width:100%; justify-content:space-between;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    /* background: linear-gradient(180deg, var(--teal-deep) 0%, #0A2C2D 100%); */
+     background: var(--gradient-hero);
+    /* color:var(--paper); */
+     color: var(--ink);
+    padding:70px 0 90px;
+  }
+  .hero .wrap{display:grid; grid-template-columns:1.15fr 0.85fr; gap:50px; align-items:center; position:relative; z-index:2;}
+  .iris-bg{
+    position:absolute; top:50%; right:-160px; transform:translateY(-50%);
+    width:640px; height:640px; border-radius:50%;
+    background: repeating-radial-gradient(circle at 50% 50%, rgba(199,150,60,0.14) 0px, rgba(199,150,60,0.14) 2px, transparent 2px, transparent 26px);
+    opacity:0.7; z-index:1; pointer-events:none;
+  }
+  .chart-line{
+    font-family:'Fraunces',serif; font-weight:300; letter-spacing:-0.02em;
+    margin:0;  color: var(--ink);
+  }
+  .chart-line.l1{font-size:clamp(2.4rem,5.2vw,4.6rem); font-weight:600;}
+  .chart-line.l2{font-size:clamp(1.8rem,3.6vw,3.3rem); opacity:0.86; margin-top:4px;}
+  .chart-line.l3{font-size:clamp(1.2rem,2.3vw,2.05rem); opacity:0.62; margin-top:2px;}
+  .hero p.lead{
+    max-width:460px; margin:26px 0 34px;  color: rgba(35,21,47,.72); font-size:1.02rem;
+  }
+  .hero-cta{display:flex; gap:16px; flex-wrap:wrap;}
+  .hero-visual{
+    position:relative; z-index:2;
+  }
+  .iris-frame{
+     /* background:linear-gradient(
+        135deg,
+        #FDE9F5,
+        var(--teal-mid),
+        var(--teal-deep)
+    ); */
+    position:relative; width:100%; aspect-ratio:1/1; max-width:400px; margin:0 auto;
+    border-radius:50%; padding:14px;
+  }
+  .iris-frame img{position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:8px solid #fff;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+@keyframes rotate{
+    to{
+        transform:rotate(360deg);
+    }
+}}
+  .stat-chip{
+    position:absolute; background:var(--paper); color:var(--ink);
+    padding:12px 18px; border-radius:16px; box-shadow:var(--shadow);
+    font-family:'JetBrains Mono',monospace; font-size:0.78rem;
+  }
+  .stat-chip b{display:block; font-family:'Fraunces',serif; font-size:1.5rem; font-weight:600; color:var(--teal-deep);}
+  .stat-chip.a{top:-6px; left:-18px;}
+  .stat-chip.b{bottom:6px; right:-24px;}
+
+  /* ---------- QUICK INFO ---------- */
+  .quick-info{
+    background:var(--paper); margin-top:46px; position:relative; z-index:5;
+  }
+  .quick-info .wrap{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    background:var(--paper); border-radius:22px; box-shadow:var(--shadow); overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .quick-item{padding:30px 28px; display:flex; gap:16px; align-items:flex-start; border-right:1px solid var(--line);}
+  .quick-item:last-child{border-right:none;}
+  .qicon{
+    width:44px;height:44px; border-radius:50%; flex-shrink:0;
+    background:var(--paper-dim); display:flex; align-items:center; justify-content:center;
+    color:var(--teal-deep);
+  }
+  .quick-item h4{font-family:'Fraunces',serif; margin:0 0 4px; font-size:1.02rem;}
+  .quick-item p{margin:0; font-size:0.88rem; color:#4A5450;}
+
+  /* ---------- SECTIONS GENERAL ---------- */
+  section{padding:50px 0;}
+  .section-head{max-width:640px; margin:0 auto 56px; text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem); margin-top:14px;}
+  .section-head p{color:#4A5450; margin-top:14px; font-size:1.02rem;}
+  .section-head.left{margin-left:0; text-align:left;}
+
+  /* ---------- APPOINTMENT FORM ---------- */
+  .appointment{
+    background:var(--teal-deep); color:var(--paper); border-radius:28px;
+    padding:56px; display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px; align-items:center;
+    box-shadow:var(--shadow);
+  }
+  .appointment .copy .eyebrow{color:var(--iris-gold);}
+  .appointment h2{font-size:clamp(1.7rem,3vw,2.3rem); margin-top:14px; color:var(--paper);}
+  .appointment p{color:rgba(250,247,241,0.75); margin-top:14px;}
+  .appt-list{list-style:none; padding:0; margin:26px 0 0; display:flex; flex-direction:column; gap:12px;}
+  .appt-list li{display:flex; gap:12px; align-items:center; font-size:0.92rem; color:rgba(250,247,241,0.85);}
+  .appt-list li::before{content:"◎"; color:var(--iris-gold);}
+  form.card-form{
+    background:var(--paper); color:var(--ink); border-radius:18px; padding:34px; display:grid; gap:16px;
+  }
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field label{font-size:0.78rem; font-weight:600; color:var(--teal-deep); text-transform:uppercase; letter-spacing:0.05em;}
+  .field input, .field select{
+    padding:13px 14px; border-radius:10px; border:1px solid var(--line); font-family:'Inter',sans-serif; font-size:0.95rem; background:#fff;
+  }
+  .field input:focus, .field select:focus{border-color:var(--iris-gold);}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  form.card-form .btn{width:100%; margin-top:6px;}
+
+
+  .btn-primary{
+    /* background: var(--gradient-button);
+    color:#fff; */
+
+     background: var(--gradient-button);
+    color:#fff;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover{
+    filter:brightness(1.05);
+}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .service-card{
+    background:#fff; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .service-card:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
+  .service-media{position:relative; aspect-ratio:16/10; overflow:hidden;}
+  .service-media img{width:100%; height:100%; object-fit:cover;}
+  .service-tag{
+    position:absolute; top:14px; left:14px; background:rgba(14,59,60,0.85); color:var(--paper);
+    font-family:'JetBrains Mono',monospace; font-size:0.68rem; padding:5px 12px; border-radius:100px; letter-spacing:0.06em;
+  }
+  .service-body{padding:22px 24px 26px;}
+  .service-body h3{font-size:1.15rem; margin-bottom:8px;}
+  .service-body p{font-size:0.88rem; color:#4A5450; margin:0 0 16px;}
+  .service-link{font-size:0.85rem; font-weight:600; color:var(--teal-deep); display:inline-flex; align-items:center; gap:6px;}
+  .service-link::after{content:"→"; transition:transform .2s ease;}
+  .service-card:hover .service-link::after{transform:translateX(4px);}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:14px;
+  }
+  .gallery-grid img{width:100%; height:100%; object-fit:cover; border-radius:16px;}
+  .gallery-grid a:nth-child(1){grid-column:span 2; grid-row:span 2;}
+  .gallery-grid a:nth-child(4){grid-column:span 2;}
+  .gallery-grid a:nth-child(6){grid-row:span 2;}
+  .gallery-grid a{display:block; overflow:hidden; border-radius:16px; position:relative;}
+  .gallery-grid a img{transition:transform .5s ease;}
+  .gallery-grid a:hover img{transform:scale(1.08);}
+
+  /* ---------- DOCTORS ---------- */
+  .band{background:var(--paper-dim);}
+  .doctors-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:36px 30px;}
+  .doc-card{text-align:center;}
+  .doc-frame{
+    width:220px; height:220px; margin:0 auto 20px; border-radius:50%; padding:8px;
+    background:conic-gradient(from 120deg, var(--iris-gold), var(--teal-mid), var(--iris-gold));
+  }
+  .doc-frame img{width:100%; height:100%; border-radius:50%; object-fit:cover; border:5px solid var(--paper-dim);}
+  .doc-card h3{font-size:1.15rem;}
+  .doc-card .role{font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.06em; color:var(--clay); text-transform:uppercase; margin:8px 0 4px;}
+  .doc-card .cred{font-size:0.85rem; color:#4A5450;}
+
+  /* ---------- TEAM ---------- */
+  .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:25px;}
+  .team-card{text-align:center;}
+  .team-frame{width:220px;height:220px; margin:0 auto 16px; border-radius:50%; overflow:hidden; border:3px solid var(--teal-deep);}
+  .team-frame img{width:100%; height:100%; object-fit:cover;}
+  .team-card h4{font-size:1rem; font-family:'Fraunces',serif; margin-bottom:2px;}
+  .team-card p{font-size:0.82rem; color:#4A5450; margin:0;}
+
+  /* ---------- TESTIMONIAL ---------- */
+  .testimonial{
+    background:var(--teal-deep); color:var(--paper); border-radius:28px; padding:60px 70px;
+    position:relative; overflow:hidden;
+  }
+  .testimonial::before{
+    content:"“"; font-family:'Fraunces',serif; font-size:9rem; position:absolute; top:-20px; left:24px; color:var(--iris-gold); opacity:0.4;
+  }
+  .testimonial p{font-family:'Fraunces',serif; font-size:1.35rem; font-weight:300; line-height:1.55; max-width:820px; position:relative; z-index:1;}
+  .testimonial .who{margin-top:22px; font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:var(--iris-gold);}
+  .testi-nav{display:flex; gap:12px; margin-top:34px;}
+  .testi-nav button{
+    width:38px;height:38px;border-radius:50%; border:1px solid rgba(250,247,241,0.35); background:transparent; color:var(--paper); cursor:pointer;
+  }
+  .testi-nav button:hover{background:rgba(250,247,241,0.15);}
+
+  /* ---------- HISTORY ---------- */
+  .history{
+    background: linear-gradient(180deg, #FBF3E4 0%, #F1ECE1 100%);
+  }
+  .history-content{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .history-text p{font-size:0.97rem; color:#3C4642; margin-bottom:16px;}
+  .history-text b{color:var(--teal-deep);}
+  .history-gallery{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .history-gallery img{border-radius:14px; filter:sepia(0.25) contrast(1.02);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--gradient-hero); color:var(--ink); padding:70px 0 0;}
+  .footer-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:50px; padding-bottom:50px; border-bottom:1px solid rgba(250,247,241,0.12);}
+  footer h4{font-family:'Fraunces',serif; color:var(--ink); font-size:1.05rem; margin-bottom:18px;}
+  footer p, footer a{font-size:0.9rem; color:var(--ink);}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
+  .socials{display:flex; gap:12px; margin-top:16px;}
+  .socials a{
+    width:38px;height:38px;border-radius:50%; border:1px solid rgba(250,247,241,0.25); display:flex; align-items:center; justify-content:center;
+  }
+  .socials a:hover{background:var(--iris-gold); border-color:var(--iris-gold); color:var(--ink);}
+  .map-box{border-radius:14px; overflow:hidden; margin-top:14px;}
+  .bottom-bar{padding:22px 0; text-align:center; font-size:0.8rem; color:rgba(250,247,241,0.5);}
+
+  .hero-slider{
+    position:relative;
+}
+
+.hero-slide{
+    display:none;
+    animation:fade .7s ease;
+}
+
+.hero-slide.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:30px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#ddd;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#7db7c5;
+    transform:scale(1.2);
+}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .nav-links{position:fixed; top:73px; left:0; right:0; background:var(--paper); flex-direction:column; padding:20px 28px; gap:18px; border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .3s ease; z-index:99;}
+    .nav-links.open{transform:translateY(0);}
+    .burger{display:block;}
+    .hero .wrap{grid-template-columns:1fr; text-align:center;}
+    .hero p.lead{margin-left:auto; margin-right:auto;}
+    .hero-cta{justify-content:center;}
+    .iris-bg{display:none; }
+    .quick-info .wrap{grid-template-columns:1fr;}
+    .quick-item{border-right:none; border-bottom:1px solid var(--line);}
+    .quick-item:last-child{border-bottom:none;}
+    .appointment{grid-template-columns:1fr; padding:36px 24px;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .doctors-grid{grid-template-columns:1fr 1fr;}
+    .team-grid{grid-template-columns:1fr 1fr;}
+    .history-content{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid a:nth-child(1){grid-column:span 2;}
+  }
+  @media (max-width:600px){
+    section{padding:64px 0;}
+    .services-grid, .doctors-grid, .team-grid{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr;}
+    .testimonial{padding:40px 26px;}
+    .chart-line.l1{font-size:2.1rem;}
+    .stat-chip{display:none;}
+  }
+
+.whatsapp-float{
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 34px;
+    box-shadow: 0 12px 30px rgba(37,211,102,.4);
+    z-index: 9999;
+    animation: floatWhatsapp 3s ease-in-out infinite;
+    transition: .3s ease;
+}
+
+.whatsapp-float:hover{
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 18px 40px rgba(37,211,102,.55);
+}
+
+@keyframes floatWhatsapp{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width:768px){
+    .whatsapp-float{
+        width:56px;
+        height:56px;
+        right:18px;
+        bottom:18px;
+        font-size:30px;
+    }
+}
+</style>
+</head>
+<body>
+ <a
+  href="https://wa.me/918104441581"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<header>
+  <nav>
+   <div class="logo">
+    <img src="/images/logo.png" alt="Dr. Raja Super Specialty Eye Care Logo" class="logo-img">
+</div>
+    <ul class="nav-links" id="navLinks">
+     
+         <li class="has-dropdown" id="servicesDropdown">
+        <button class="drop-trigger" id="servicesDropTrigger" aria-expanded="false">
+         Specialities
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-panel">
+          <a href="#services"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>All services</a>
+          <a href="glaucoma.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>Glaucoma</a>
+          <a href="cataract.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/></svg></span>Cataract</a>
+          <a href="diabeticRetinopathy.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></span>Diabetic Retinopathy</a>
+          <a href="paediatricOphthalmolog.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/></svg></span>Paediatric Ophthalmology</a>
+         <a href="dryeye.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span>Dry Eye</a>
+          <a href="lasik.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></svg></span>LASIK</a>
+          <a href="retina.html" class="current"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>Retina</a>
+          <a href="cornea.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/></svg></span>Cornea</a>
+
+
+        </div>
+      </li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#history">Our Story</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#appointment" class="btn" style="padding:11px 22px;">Book Appointment</a>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+    <div class="iris-bg"></div>
+
+    <div class="hero-slider">
+
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+            <div class="wrap">
+                <div>
+                    <p class="eyebrow">Eye Care, Precisely Focused</p>
+                    <h1>
+                        <span class="chart-line l1">See your best</span>
+                        <span class="chart-line l2">life, clearly</span>
+                        <span class="chart-line l3">every single day</span>
+                    </h1>
+                    <p class="lead">
+                        Three generations of ophthalmic care in Nerul — from cataract and glaucoma to retina and LASIK.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#appointment" class="btn">Schedule your visit</a>
+                        <a href="#services" class="btn ghost">Explore Services</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="iris-frame">
+                        <img src="/images/eye1.jpg"  alt="Eye Care">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+            <div class="wrap">
+                <div>
+                    <p class="eyebrow">Advanced Cataract Surgery</p>
+                    <h1>
+                        <span class="chart-line l1">Restore</span>
+                        <span class="chart-line l2">your vision</span>
+                        <span class="chart-line l3">with confidence</span>
+                    </h1>
+
+                    <p class="lead">
+                        Modern phacoemulsification with premium lenses for faster recovery.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#appointment" class="btn">Book Consultation</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="iris-frame">
+                        <img src="/images/eye2.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+            <div class="wrap">
+                <div>
+                    <p class="eyebrow">Expert Retina Care</p>
+                    <h1>
+                        <span class="chart-line l1">Protect</span>
+                        <span class="chart-line l2">every detail</span>
+                        <span class="chart-line l3">of your sight</span>
+                    </h1>
+
+                    <p class="lead">
+                        Specialized retina treatment using advanced diagnostic technology.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#appointment" class="btn">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="iris-frame">
+                        <img src="/images/eye 3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</section>
+
+<div class="quick-info ">
+  <div class="wrap">
+    <div class="quick-item">
+      <div class="qicon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div><h4>Call the front desk</h4><p>+91 8104441581 / 8356076193</p></div>
+    </div>
+    <div class="quick-item">
+      <div class="qicon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div><h4>Clinic timings</h4><p>Morning: 10:00 AM - 02:00 PM
+Evening: 05:00 PM - 08:30 PM</p></div>
+    </div>
+    <div class="quick-item">
+      <div class="qicon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div><h4>Find us</h4><p>OFFICE NO 2 & 3, 1st FLOOR, GOODWILL ARCADE, STATION ROAD, SECTOR 10, NERUL WEST, NAVI MUMBAI, MAHARASHTRA 400706</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="appointment">
+  <div class="wrap">
+    <div class="appointment">
+      <div class="copy">
+        <p class="eyebrow">Book a slot</p>
+        <h2>A clear view starts with one conversation</h2>
+        <p>Tell us a little about you and we'll confirm a slot with the right specialist — no waiting rooms full of guesswork.</p>
+        <ul class="appt-list">
+          <li>Same-week appointments for most conditions</li>
+          <li>Direct consultation with the specialist you need</li>
+          <li>Confirmation by call or WhatsApp within the hour</li>
+        </ul>
+      </div>
+      <form id="appointmentForm" class="card-form" action="appointment.php" method="POST">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name"  name="name" type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="two-col">
+          <div class="field">
+            <label for="mobile">Mobile number</label>
+            <input id="mobile" name="mobile" type="tel" placeholder="10-digit number" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="field">
+          <label for="date">Preferred date</label>
+          <input id="date" name="date" type="date" required>
+        </div>
+        <button type="submit" class="btn">Confirm appointment</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="justify-content:center;">What we treat</p>
+      <h2>Specialty care, under one roof</h2>
+      <p>From routine vision checks to advanced surgical care, each department is led by a dedicated consultant.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-media"><span class="service-tag">Surgical</span><img src="/images/Cataract.jpg" alt="Close-up of an eye affected by cataract"></div>
+        <div class="service-body">
+          <h3>Cataract</h3>
+          <p>A cloudy area in the eye's lens that blurs vision. Left untreated in one or both eyes, it's a leading cause of vision loss worldwide.</p>
+          <a class="service-link" href="cataract.html">Read more</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-media"><span class="service-tag">Chronic</span><img src="/images/Glaucoma.jpg" alt="Illustration comparing normal vision to glaucoma vision"></div>
+        <div class="service-body">
+          <h3>Glaucoma</h3>
+          <p>A chronic eye disease that damages the optic nerve and can lead to blindness. Early detection is the strongest defense we have.</p>
+          <a class="service-link" href="glaucoma.html">Read more</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-media"><span class="service-tag">Diabetic care</span><img src="/images/Diabetic Retinopathy.jpg" alt="Retinal scan comparing healthy and diabetic retina"></div>
+        <div class="service-body">
+          <h3>Diabetic Retinopathy</h3>
+          <p>Diabetes can damage the blood vessels of the retina over time, threatening vision. We screen and treat it at every stage.</p>
+          <a class="service-link" href="diabeticRetinopathy.html">Read more</a>
+        </div>
+      </div>
+      
+
+      <div class="service-card">
+        <div class="service-media"><span class="service-tag">Children</span><img src="/images/Paediatric Ophthalmology.jpg" alt="Pediatric eye examination for a child"></div>
+        <div class="service-body">
+          <h3>Paediatric Ophthalmology</h3>
+          <p>Roughly 1 in 6 children has an undetected vision issue. Our early screening protects learning, play, and long-term sight.</p>
+          <a class="service-link" href="paediatricOphthalmolog.html">Read more</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-media"><span class="service-tag">Comfort</span><img src="/images/DRY EYE.jpg" alt="Close-up of an irritated dry eye"></div>
+        <div class="service-body">
+          <h3>Dry Eye</h3>
+          <p>A common condition where eyes don't produce enough — or good enough — quality tears, causing daily discomfort.</p>
+          <a class="service-link" href="dryeye.html">Read more</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-media"><span class="service-tag">Vision correction</span><img src="/images/Lasik.jpg" alt="LASIK laser eye surgery procedure"></div>
+        <div class="service-body">
+          <h3>LASIK</h3>
+          <p>A precise reshaping of the cornea that corrects nearsightedness, farsightedness, and astigmatism in a single outpatient visit.</p>
+          <a class="service-link" href="lasik.html">Read more</a>
+        </div>
+      </div>
+
+        <div class="service-card">
+        <div class="service-media"><span class="service-tag">Vitreoretinal</span><img src="/images/Retina.jpg" alt="Retinal imaging scan on screen"></div>
+        <div class="service-body">
+          <h3>Retina</h3>
+          <p>From diabetic retinopathy to retinal detachment, our specialists diagnose and treat conditions affecting the eye's light-sensitive layer.</p>
+          <a class="service-link" href="retina.html">Read more</a>
+        </div>
+      </div>
+ 
+      <div class="service-card">
+        <div class="service-media"><span class="service-tag">Ocular surface</span><img src="/images/Cornea.jpg" alt="Close-up of the clear cornea at the front of the eye"></div>
+        <div class="service-body">
+          <h3>Cornea</h3>
+          <p>Expert care for keratoconus, infections, injuries, and corneal transplants — protecting the eye's clear front window.</p>
+          <a class="service-link" href="cornea.html">Read more</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="justify-content:center;">Inside the clinic</p>
+      <h2>A look around Dr. Raja Eye Hospital</h2>
+    </div>
+    <div class="gallery-grid">
+      <a href="#"><img src="https://picsum.photos/seed/gallery1/600/600" alt="Surgical team performing an eye procedure"></a>
+      <a href="#"><img src="https://picsum.photos/seed/gallery2/300/300" alt="Ophthalmologist using diagnostic equipment"></a>
+      <a href="#"><img src="https://picsum.photos/seed/gallery3/300/300" alt="Retinal imaging scans on screen"></a>
+      <a href="#"><img src="https://picsum.photos/seed/gallery4/600/300" alt="Patient consultation in progress"></a>
+      <a href="#"><img src="https://picsum.photos/seed/gallery5/300/300" alt="Diagnostic machine in the clinic"></a>
+      <a href="#"><img src="https://picsum.photos/seed/gallery6/300/600" alt="Doctor speaking with an elderly patient"></a>
+    </div>
+  </div>
+</section>
+
+<section id="doctors">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="justify-content:center;">Meet the specialists</p>
+      <h2>Our Doctors Panel</h2>
+      <p>Every case is reviewed by a consultant trained in that exact sub-specialty — not a generalist stretched thin.</p>
+    </div>
+    <div class="doctors-grid">
+
+      <div class="doc-card">
+        <div class="doc-frame"><img src="/images/rahul.jpg" alt="Portrait of Dr. Rahul Raja Achlerkar"></div>
+        <h3>Dr. Rahul Raja Achlerkar</h3>
+        <p class="role">Cataract &amp; Glaucoma</p>
+        <p class="cred">M.B.B.S., D.N.B., F.A.E.H.</p>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-frame"><img src="/images/siddesh.jpeg" alt="Portrait of Dr. Siddhesh Bapat"></div>
+        <h3>Dr. Siddhesh Bapat</h3>
+        <p class="role">Retina Specialist</p>
+        <p class="cred">M.B.B.S., M.S., F.V.R.S.</p>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-frame"><img src="/images/vidula.jpg" alt="Portrait of Optom. Vidula Patil"></div>
+        <h3>Optom. Vidula Patil</h3>
+        <p class="role">MOptometry</p>
+        <p class="cred">Vision Therapy &amp; Neurovision Rehabilitation</p>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-frame"><img src="/images/jitendra.png" alt="Portrait of Dr. Jitendra Pandey"></div>
+        <h3>Dr. Jitendra Pandey</h3>
+        <p class="role">Paediatric Ophthalmology</p>
+        <p class="cred">M.B.B.S., D.N.B. (Ophthal), M.N.A.M.S., F.P.O.S.</p>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-frame"><img src="/images/rasika.jpg" alt="Portrait of Dr. Rasika Thakur Deshpande"></div>
+        <h3>Dr. Rasika Thakur Deshpande</h3>
+        <p class="role">Cornea Specialist</p>
+        <p class="cred">M.B.B.S., D.O.M.S., F.C.P.S.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="justify-content:center;">Behind the scenes</p>
+      <h2>Our Hospital Team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-frame"><img src="/images/Chitrarekha.jpg" alt="Portrait of Dr. Chitrarekha Achlerkar"></div>
+        <h4>Dr. Chitrarekha Achlerkar</h4>
+        <p>BAMS · Medical Director</p>
+      </div>
+      <div class="team-card">
+        <div class="team-frame"><img src="/images/noopur.jpg" alt="Portrait of Dr. Noopur Achlerkar"></div>
+        <h4>Dr. Noopur Achlerkar</h4>
+        <p>M.B.B.S., M.D. (P.S.M.) · Chief Medical Officer</p>
+      </div>
+      <div class="team-card">
+        <div class="team-frame"><img src="/images/kiran.jpg" alt="Portrait of Ms. Kiran Sahani"></div>
+        <h4>Ms. Kiran Sahani</h4>
+        <p>B.Sc. Optometry</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:36px;">
+      <p class="eyebrow" style="justify-content:center;">In their words</p>
+      <h2>Testimonials</h2>
+    </div>
+    <div class="testimonial">
+      <p>Remarkable service and extremely professional care. Every step was guided and explained clearly — surgery was painless and sutureless, and my mother's recovery has been flawless.</p>
+      <p class="who">— Poonam Vaidya</p>
+      <div class="testi-nav">
+        <button aria-label="Previous testimonial">←</button>
+        <button aria-label="Next testimonial">→</button>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<section id="history" class="history">
+  <div class="wrap">
+    <div class="section-head left" style="max-width:none;">
+      <p class="eyebrow">Since our founding</p>
+      <h2>Our History</h2>
+    </div>
+    <div class="history-content">
+      <div class="history-text">
+        <p><b>Dr. Raja Super Specialty Hospital</b> began as an inspiring story of dedication that started with <b>Dr. Raja Achlerkar</b>. Deeply influenced by the hardships he witnessed treating patients in tribal regions of Dhule, he committed himself to delivering essential healthcare where it was needed most — travelling to remote tribal hamlets in Taloda to serve the community.</p>
+        <p>His wife, <b>Dr. Chitrarekha</b>, played a significant role in this mission, treating women for eighteen years. After personally reviving a bitten patient in a tribal village, the family's commitment to patient care only deepened.</p>
+        <p>Inspired by his father's legacy, <b>Rahul</b> pursued his M.B.B.S. and specialised in ophthalmology, completing a fellowship at the Aravind Eye Hospital. After gaining experience in Kerala, Dr. Noopur returned to Maharashtra with him to found the Dr. Raja Super Specialty Eye Hospital near Nerul Station.</p>
+        <p>Today, the hospital offers a wide range of treatments — cataract surgery, non-surgical strabismus care, and specialised care for diabetic patients — continuing a legacy of resilience and compassion in healthcare.</p>
+      </div>
+      <div class="history-gallery">
+        <img src="https://picsum.photos/seed/history1/280/280" alt="Archival photo of an early community health camp">
+        <img src="https://picsum.photos/seed/history2/280/280" alt="Archival photo of hospital founders">
+        <img src="https://picsum.photos/seed/history3/280/280" alt="Archival photo of a rural eye screening">
+        <img src="https://picsum.photos/seed/history4/280/280" alt="Archival photo of hospital staff at work">
+      </div>
+    </div>
+  </div>
+</section> 
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:18px;">
+          <!-- <span class="mark"></span> -->
+         <div class="logo">
+    <img src="/images/logo.png" alt="Dr. Raja Super Specialty Eye Care Logo" class="logo-img">
+</div>
+        </div>
+        <p>Dr. Rahul Raja Achlerkar · M.B.B.S., D.N.B., F.A.E.H.<br>Specialized in Advanced Cataract &amp; Glaucoma</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact us</h4>
+        <ul>
+          <li>+91 8104441581 · 8356076193</li>
+          <li>rajaeyecare18@gmail.com</li>
+          <li>Office 2 &amp; 3, 1st Floor, Goodwill Arcade,<br>Station Road, Sector 10, Nerul West,<br>Navi Mumbai, Maharashtra 400706</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <div class="map-box">
+          <img src="https://picsum.photos/seed/mapview/380/200" alt="Map showing hospital location">
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar">© 2026 All Rights Reserved — Dr. Raja Super Specialty Eye Hospital</div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const servicesDropdown = document.getElementById('servicesDropdown');
+  const servicesDropTrigger = document.getElementById('servicesDropTrigger');
+  servicesDropTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = servicesDropdown.classList.toggle('open');
+    servicesDropTrigger.setAttribute('aria-expanded', isOpen);
+  });
+  document.addEventListener('click', (e) => {
+    if (!servicesDropdown.contains(e.target)) {
+      servicesDropdown.classList.remove('open');
+      servicesDropTrigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+// Appointment form
+  const form = document.getElementById("appointmentForm");
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch("appointment.php", {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.text();
+
+        if(result.trim() === "success"){
+            alert("Appointment request submitted successfully.");
+            form.reset(); // Clears only the form
+        }else{
+            alert(result);
+        }
+
+    } catch(err){
+        alert("Something went wrong. Please try again.");
+    }
+});
+
+
+// Hero sliders
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".dot");
+
+let current = 0;
+
+function showSlide(index){
+
+    slides.forEach(s=>s.classList.remove("active"));
+    dots.forEach(d=>d.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    current = index;
+}
+
+setInterval(()=>{
+
+    current++;
+
+    if(current >= slides.length)
+        current = 0;
+
+    showSlide(current);
+
+},1500);
+
+dots.forEach((dot,index)=>{
+    dot.addEventListener("click",()=>{
+        showSlide(index);
+    });
+});
+</script>
+
+</body>
+</html>
