@@ -39,6 +39,7 @@
   header{position:sticky; top:0; z-index:100; background:rgba(250,247,241,0.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
   nav{display:flex; align-items:center; justify-content:space-between; max-width:1380px; margin:0 auto; padding:16px 28px;}
   .logo{display:flex; align-items:center; gap:12px;}
+  .logo-img{height:40px; width:auto; max-width:160px; object-fit:contain;}
   .logo .mark{width:40px; height:40px; border-radius:50%; background:radial-gradient(circle at 35% 35%, var(--iris-gold) 0%, var(--teal-deep) 55%, var(--ink) 100%); position:relative; flex-shrink:0; box-shadow:inset 0 0 0 2px rgba(250,247,241,0.5);}
   .logo .mark::after{content:""; position:absolute; inset:14px; border-radius:50%; background:var(--ink);}
   .logo-text{font-family:'Fraunces',serif; line-height:1.1;}
@@ -62,6 +63,13 @@
   .dropdown-panel a:hover{background:var(--paper-dim); color:var(--teal-deep);}
   .dropdown-panel .d-ic{width:30px; height:30px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:var(--paper-dim); color:var(--teal-deep);}
   .dropdown-panel a:hover .d-ic{background:var(--teal-deep); color:var(--paper);}
+    @media (max-width:980px){
+    .dropdown-panel{position:static; transform:none; width:auto; box-shadow:none; border:none; padding:6px 0 0 14px; opacity:1; visibility:visible; pointer-events:auto; display:none; background:transparent;}
+    .has-dropdown:hover .dropdown-panel,
+    .has-dropdown.open .dropdown-panel{transform:none; position:static;}
+    .has-dropdown.open .dropdown-panel{display:block;}
+    .drop-trigger{width:100%; justify-content:space-between;}
+  }
   .dropdown-panel a.current{background:var(--paper-dim); color:var(--teal-deep);}
   @media (max-width:980px){
     .nav-links{position:fixed; top:73px; left:0; right:0; background:var(--paper); flex-direction:column; padding:20px 28px; gap:18px; border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .3s ease; z-index:99; align-items:flex-start;}
@@ -302,6 +310,19 @@ footer ul{
     section{padding:60px 0;}
     .types-grid, .treat-grid, .surgery-grid{grid-template-columns:1fr;}
     .d-hero-badge{display:none;}
+  }
+  @media (max-width:600px){
+    section{padding:60px 0;}
+    .types-grid, .treat-grid, .surgery-grid{grid-template-columns:1fr;}
+    .d-hero-badge{display:none;}
+  }
+    @media (max-width:420px){
+    .logo-img{height:32px;}
+    .nav-cta .btn{padding:8px 10px !important; font-size:0.72rem;}
+    nav{padding:12px 14px;}
+  }
+  @media (max-width:360px){
+    .nav-cta .btn{padding:7px 8px !important; font-size:0.68rem;}
   }
 </style>
 </head>
