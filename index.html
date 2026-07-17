@@ -362,7 +362,7 @@
 
   /* ---------- DOCTORS ---------- */
   .band{background:var(--paper-dim);}
-  .doctors-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:36px 30px;}
+  .doctors-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:36px 30px;}
   .doc-card{text-align:center;}
   .doc-frame{
     width:220px; height:220px; margin:0 auto 20px; border-radius:50%; padding:8px;
@@ -382,7 +382,7 @@
   .team-card p{font-size:0.82rem; color:#4A5450; margin:0;}
 
   /* ---------- TESTIMONIAL ---------- */
-  .testimonial{
+  /* .testimonial{
     background:var(--teal-deep); color:var(--paper); border-radius:28px; padding:60px 70px;
     position:relative; overflow:hidden;
   }
@@ -395,7 +395,7 @@
   .testi-nav button{
     width:38px;height:38px;border-radius:50%; border:1px solid rgba(250,247,241,0.35); background:transparent; color:var(--paper); cursor:pointer;
   }
-  .testi-nav button:hover{background:rgba(250,247,241,0.15);}
+  .testi-nav button:hover{background:rgba(250,247,241,0.15);} */
 
   /* ---------- HISTORY ---------- */
   .history{
@@ -539,6 +539,119 @@
         font-size:30px;
     }
 }
+
+/* ---------- TESTIMONIAL ---------- */
+
+.testimonial-slider{
+    position:relative;
+}
+
+.testimonial{
+    display:none;
+    background:var(--teal-deep);
+    color:var(--paper);
+    border-radius:28px;
+    padding:60px 70px;
+    position:relative;
+    overflow:hidden;
+    animation:fade .1s ease;
+}
+
+.testimonial.active{
+    display:block;
+}
+
+.testimonial::before{
+    content:"“";
+    font-family:'Fraunces',serif;
+    font-size:9rem;
+    position:absolute;
+    top:-20px;
+    left:24px;
+    color:var(--iris-gold);
+    opacity:.4;
+}
+
+.stars{
+    color:#FFD54A;
+    font-size:22px;
+    letter-spacing:4px;
+    margin-bottom:18px;
+    position:relative;
+    z-index:1;
+}
+
+.testimonial p{
+    font-family:'Fraunces',serif;
+    font-size:1.35rem;
+    font-weight:300;
+    line-height:1.55;
+    max-width:1220px;
+    position:relative;
+    z-index:1;
+}
+
+.testimonial h4{
+    margin-top:22px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.9rem;
+    color:var(--paper);
+    font-weight:400;
+}
+
+.testi-nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+}
+
+.testi-nav button{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);
+    background:transparent;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.testi-nav button:hover{
+    background:rgba(255,255,255,.15);
+}
+
+
+.history-images{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.history-images img{
+    flex:1;
+    min-width:220px;
+    max-width:280px;
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateX(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
 </style>
 </head>
 <body>
@@ -565,7 +678,7 @@
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="dropdown-panel">
-          <a href="#services"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>All services</a>
+          <a href="#services"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>All Specialities</a>
           <a href="glaucoma.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>Glaucoma</a>
           <a href="cataract.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/></svg></span>Cataract</a>
           <a href="diabeticRetinopathy.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></span>Diabetic Retinopathy</a>
@@ -900,39 +1013,40 @@ Evening: 05:00 PM - 08:30 PM</p></div>
       </div>
 
         <div class="doc-card">
-        <div class="doc-frame"><img src="" alt="Portrait of Dr. Pratik Kunde"></div>
+        <div class="doc-frame"><img src="images/Dr. Pratik Kunde .jpeg" alt="Portrait of Dr. Pratik Kunde"></div>
         <h3>Dr. Pratik Kunde </h3>
         <!-- <p class="role">MOptometry</p> -->
         <!-- <p class="cred">Vision Therapy &amp; Neurovision Rehabilitation</p> -->
       </div>
 
         <div class="doc-card">
-        <div class="doc-frame"><img src="" alt="Portrait of Dr. Shivangi"></div>
+        <div class="doc-frame"><img src="images/Dr. Shivangi Singh.jpeg" alt="Portrait of Dr. Shivangi"></div>
         <h3>Dr. Shivangi </h3>
         <!-- <p class="role">MOptometry</p> -->
         <!-- <p class="cred">Vision Therapy &amp; Neurovision Rehabilitation</p> -->
       </div>
 
         <div class="doc-card">
-        <div class="doc-frame"><img src="" alt="Portrait of Dr. Nitin"></div>
+        <div class="doc-frame"><img src="images/Dr, Nitin Tiwari.jpeg" alt="Portrait of Dr. Nitin"></div>
         <h3>Dr. Nitin </h3>
         <!-- <p class="role">MOptometry</p> -->
         <!-- <p class="cred">Vision Therapy &amp; Neurovision Rehabilitation</p> -->
       </div>
+      
 
-      <!-- <div class="doc-card">
+      <div class="doc-card">
         <div class="doc-frame"><img src="images/jitendra.png" alt="Portrait of Dr. Jitendra Pandey"></div>
         <h3>Dr. Jitendra Pandey</h3>
         <p class="role">Paediatric Ophthalmology</p>
         <p class="cred">M.B.B.S., D.N.B. (Ophthal), M.N.A.M.S., F.P.O.S.</p>
       </div>
 
-      <div class="doc-card">
+      <!-- <div class="doc-card">
         <div class="doc-frame"><img src="images/rasika.jpg" alt="Portrait of Dr. Rasika Thakur Deshpande"></div>
         <h3>Dr. Rasika Thakur Deshpande</h3>
         <p class="role">Cornea Specialist</p>
         <p class="cred">M.B.B.S., D.O.M.S., F.C.P.S.</p>
-      </div> -->
+      </div>  -->
 
     </div>
   </div>
@@ -966,18 +1080,69 @@ Evening: 05:00 PM - 08:30 PM</p></div>
 
 <section id="testimonials">
   <div class="wrap">
+
     <div class="section-head" style="margin-bottom:36px;">
-      <p class="eyebrow" style="justify-content:center;">In their words</p>
+      <p class="eyebrow" style="justify-content:center;">In Their Words</p>
       <h2>Testimonials</h2>
     </div>
-    <div class="testimonial">
-      <p>Remarkable service and extremely professional care. Every step was guided and explained clearly — surgery was painless and sutureless, and my mother's recovery has been flawless.</p>
-      <p class="who">— Poonam Vaidya</p>
-      <div class="testi-nav">
-        <button aria-label="Previous testimonial">←</button>
-        <button aria-label="Next testimonial">→</button>
+
+    <div class="testimonial-slider">
+
+      <div class="testimonial active">
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+         We got my grandmother's cataract surgery done at this hospital, and we couldn't be happier with the care she received. The doctor was very experienced and made her feel comfortable and confident before the procedure. The staff was friendly, attentive, and always willing to help. The surgery went smoothly, and her vision has improved tremendously. She can now read, watch TV, and carry out her daily activities with much greater ease. Thank you to the entire team for taking such good care of her. Highly recommended!😊
+        </p>
+
+        <h4>— Pooja Parve </h4>
       </div>
+
+      <div class="testimonial">
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+         I am from Badlapur. I was diagnosed as cataract with high eye pressure. I was advised combined surgery for eye. I came to know about Dr Raja Superspeciality Eye Hospital from my relatives. I was operated for cataract and glaucoma (sutureless glaucoma surgery) MIGS surgery under Cashless Bajaj insurance. Now I can see clear.post op no stich or not bandage. I am happy
+        </p>
+
+        <h4>— Sushant Hegishte</h4>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+         My wife got operated for pterygium surgery here at Dr. Raja superspeciality eye care. The experience was excellent. Dr Rahul is very skilled. The surgery was with the advancd technique so my wife didnt experienced any pain or discomfort. The entire procedure was smooth. Thank you.
+        </p>
+
+        <h4>— Krishna Goriwale</h4>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          Main Dombivli se specially Dr. Raja Eye Care aaya kyu ke yaha cataract surgery bina koi suture aur injection ke ki jaati hai. Mujhe mature cataract tha. Mera experience bohot accha raha aur surgery bhi successful hui mujhe ab kafi clear dikh raha hai. Doctor aur staff bohot professional aur caring hai. Highly recommended!
+        </p>
+
+        <h4>— Lalchand Kharbe</h4>
+      </div>
+
     </div>
+
+    <div class="testi-nav">
+      <button id="prevTesti">←</button>
+      <button id="nextTesti">→</button>
+    </div>
+
   </div>
 </section> 
 
@@ -993,12 +1158,17 @@ Evening: 05:00 PM - 08:30 PM</p></div>
         <p>His wife, <b>Dr. Chitrarekha</b>, played a significant role in this mission, treating women for eighteen years. After personally reviving a bitten patient in a tribal village, the family's commitment to patient care only deepened.</p>
         <p>Inspired by his father's legacy, <b>Rahul</b> pursued his M.B.B.S. and specialised in ophthalmology, completing a fellowship at the Aravind Eye Hospital. After gaining experience in Kerala, Dr. Noopur returned to Maharashtra with him to found the Dr. Raja Super Specialty Eye Hospital near Nerul Station.</p>
         <p>Today, the hospital offers a wide range of treatments — cataract surgery, non-surgical strabismus care, and specialised care for diabetic patients — continuing a legacy of resilience and compassion in healthcare.</p>
+        
+         <div class="history-images">
+        <img src="images/history1.jpg" alt="Archival photo of an early community health camp">
+        <img src="images/history2.jpg" alt="Archival photo of hospital founders">
+    </div>
       </div>
       <div class="history-gallery">
-        <img src="https://picsum.photos/seed/history1/280/280" alt="Archival photo of an early community health camp">
-        <img src="https://picsum.photos/seed/history2/280/280" alt="Archival photo of hospital founders">
-        <img src="https://picsum.photos/seed/history3/280/280" alt="Archival photo of a rural eye screening">
-        <img src="https://picsum.photos/seed/history4/280/280" alt="Archival photo of hospital staff at work">
+        <img src="images/history3.jpg" alt="Archival photo of an early community health camp">
+        <img src="images/history4.jpg" alt="Archival photo of hospital founders">
+        <img src="images/history5.jpg" alt="Archival photo of a rural eye screening">
+        <img src="images/history6.jpg" alt="Archival photo of hospital staff at work">
       </div>
     </div>
   </div>
@@ -1032,7 +1202,15 @@ Evening: 05:00 PM - 08:30 PM</p></div>
       <div>
         <h4>Get in touch</h4>
         <div class="map-box">
-          <img src="https://picsum.photos/seed/mapview/380/200" alt="Map showing hospital location">
+           <iframe
+            src="https://maps.google.com/maps?q=OFFICE%20NO%202%20%26%203,%201st%20FLOOR,%20GOODWILL%20ARCADE,%20STATION%20ROAD,%20SECTOR%2010,%20NERUL%20WEST,%20NAVI%20MUMBAI,%20MAHARASHTRA%20400706&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="220"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
         </div>
       </div>
     </div>
@@ -1122,6 +1300,58 @@ dots.forEach((dot,index)=>{
         showSlide(index);
     });
 });
+
+
+const testimonials = document.querySelectorAll(".testimonial");
+const nextBtn = document.getElementById("nextTesti");
+const prevBtn = document.getElementById("prevTesti");
+
+function showSlide(index){
+
+    testimonials.forEach((item)=>{
+        item.classList.remove("active");
+    });
+
+    testimonials[index].classList.add("active");
+}
+
+nextBtn.addEventListener("click",()=>{
+
+    current++;
+
+    if(current >= testimonials.length){
+        current = 0;
+    }
+
+    showSlide(current);
+
+});
+
+prevBtn.addEventListener("click",()=>{
+
+    current--;
+
+    if(current < 0){
+        current = testimonials.length - 1;
+    }
+
+    showSlide(current);
+
+});
+
+// Auto Slide
+setInterval(()=>{
+
+    current++;
+
+    if(current >= testimonials.length){
+        current = 0;
+    }
+
+    showSlide(current);
+
+},10000);
+
 </script>
 
 </body>

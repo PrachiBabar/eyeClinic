@@ -7,17 +7,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#16211F;
-    --paper:#FAF7F1;
-    --paper-dim:#F1ECE1;
-    --teal-deep:#0E3B3C;
-    --teal-mid:#3E7C7B;
-    --iris-gold:#C7963C;
-    --clay:#B4522F;
-    --line: rgba(22,33,31,0.12);
-    --shadow: 0 20px 50px -25px rgba(14,59,60,0.35);
-  }
+:root{
+  --ink: #23152F;
+
+  --paper: #FFFCFE;
+  --paper-dim: #F8F2FA;
+
+  --teal-deep: #7A2E6E;   /* Primary Purple */
+  --teal-mid: #B64D95;    /* Secondary Purple */
+
+  --iris-gold: #E76AAE;   /* Pink Accent */
+  --clay: #D8A6D3;        /* Light Lavender */
+}
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{margin:0; font-family:'Inter',sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased;}
@@ -50,7 +51,7 @@
   .burger{display:none; background:none; border:none; cursor:pointer; padding:6px;}
   .burger span{display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; transition:.3s;}
   .has-dropdown{position:relative;}
-  .drop-trigger{display:inline-flex; align-items:center; gap:6px; cursor:pointer; background:none; border:none; font:inherit; color:inherit; padding:6px 0;}
+  .drop-trigger{display:inline-flex; align-items:center; gap:6px; cursor:pointer; background:none; border:none; font:inherit; color:inherit; padding:0px 0;}
   .drop-trigger svg{transition:transform .25s ease;}
   .has-dropdown:hover .drop-trigger svg, .has-dropdown.open .drop-trigger svg{transform:rotate(180deg);}
   .dropdown-panel{position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%) translateY(6px); width:300px; background:var(--paper); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:10px; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .2s ease, transform .2s ease; z-index:120;}
@@ -83,11 +84,11 @@
   .crumb span{margin:0 8px; color:var(--iris-gold);}
 
   /* ---------- DISEASE HERO ---------- */
-  .d-hero{position:relative; overflow:hidden; background:linear-gradient(180deg, var(--teal-deep) 0%, #0A2C2D 100%); color:var(--paper); padding:44px 0 70px; margin-top:18px;}
+  .d-hero{position:relative; overflow:hidden; background:linear-gradient(135deg, var(--teal-deep) var(--teal-mid) 0%, #0A2C2D 100%); color:var(--ink); padding:44px 0 70px; margin-top:18px;}
   .d-hero .wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:46px; align-items:center;}
   .d-hero .service-tag{display:inline-block; background:rgba(199,150,60,0.18); border:1px solid rgba(199,150,60,0.5); color:var(--iris-gold); font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; padding:6px 14px; border-radius:100px; margin-bottom:18px;}
   .d-hero h1{font-size:clamp(2.2rem,4.4vw,3.4rem); line-height:1.06;}
-  .d-hero p.lead{max-width:480px; margin:20px 0 30px; color:rgba(250,247,241,0.8); font-size:1.02rem;}
+  .d-hero p.lead{max-width:480px; margin:20px 0 30px; color:var(--ink); font-size:1.02rem;}
   .d-hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
   .d-hero-visual{position:relative;}
   .d-hero-visual img{border-radius:20px; aspect-ratio:4/3; object-fit:cover; box-shadow:var(--shadow); border:1px solid rgba(250,247,241,0.15);}
@@ -175,19 +176,112 @@
   .why-item p{font-size:0.86rem; color:#4A5450; margin:0;}
 
   /* ---------- FINAL CTA ---------- */
-  .final-cta{background:linear-gradient(120deg, var(--teal-deep) 0%, #0A2C2D 100%); color:var(--paper); border-radius:28px; padding:60px; display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:center; box-shadow:var(--shadow);}
-  .final-cta h2{color:var(--paper); font-size:clamp(1.6rem,2.8vw,2.1rem); margin-top:12px;}
-  .final-cta p{color:rgba(250,247,241,0.78); margin-top:14px; max-width:460px;}
-  .final-cta-actions{display:flex; flex-direction:column; gap:12px; align-items:flex-start;}
-  .final-cta .btn{width:100%; justify-content:center;}
-  .final-cta .phone{font-family:'JetBrains Mono',monospace; font-size:0.85rem; color:var(--iris-gold);}
+.final-cta{
+    background:linear-gradient(
+        135deg,
+        var(--teal-deep) 0%,
+        var(--teal-mid) 100%
+    );
+    color:var(--paper);
+    border-radius:28px;
+    padding:60px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+    align-items:center;
+    box-shadow:var(--shadow);
+}
 
-  footer{background:#0A2C2D; color:rgba(250,247,241,0.85); padding:56px 0 0;}
-  .footer-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:50px; padding-bottom:40px; border-bottom:1px solid rgba(250,247,241,0.12);}
-  footer h4{font-family:'Fraunces',serif; color:var(--paper); font-size:1.05rem; margin-bottom:18px;}
-  footer p, footer a{font-size:0.9rem; color:rgba(250,247,241,0.7);}
-  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
-  .bottom-bar{padding:22px 0; text-align:center; font-size:0.8rem; color:rgba(250,247,241,0.5);}
+.final-cta h2{
+    color:var(--paper);
+    font-size:clamp(1.6rem,2.8vw,2.1rem);
+    margin-top:12px;
+}
+
+.final-cta p{
+    color:rgba(255,255,255,.85);
+    margin-top:14px;
+    max-width:460px;
+}
+
+.final-cta-actions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.final-cta .btn{
+    background-color: var(--paper);
+    color: var(--ink);
+    width:100%;
+    justify-content:center;
+}
+
+.final-cta .phone{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.85rem;
+    color:var(--paper);
+}
+
+ /* ---------- FOOTER ---------- */
+
+footer{
+    background:linear-gradient(
+        135deg,
+        var(--teal-deep) var(--iris-gold)
+    );
+    color:var(--ink);
+    padding:56px 0 0;
+    border:#7A2E6E;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+footer h4{
+    font-family:'Fraunces',serif;
+    color:var(--ink);
+    font-size:1.05rem;
+    margin-bottom:18px;
+}
+
+footer p,
+footer a{
+    font-size:.9rem;
+     color:var(--ink);
+    transition:.3s;
+}
+
+footer a:hover{
+     color:var(--ink);
+}
+
+footer ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.bottom-bar{
+    padding:22px 0;
+    text-align:center;
+    font-size:.8rem;
+    color:var(--ink);
+}
+.socials{display:flex; gap:12px; margin-top:16px;}
+  .socials a{
+    width:38px;height:38px;border-radius:50%; border:1px solid rgba(250,247,241,0.25); display:flex; align-items:center; justify-content:center;
+  }
+  .socials a:hover{background:var(--iris-gold); border-color:var(--iris-gold); color:var(--ink);}
 
   @media (max-width:980px){
     .d-hero .wrap{grid-template-columns:1fr;}
@@ -224,11 +318,11 @@
     <ul class="nav-links" id="navLinks">
       <li class="has-dropdown" id="servicesDropdown">
         <button class="drop-trigger" id="servicesDropTrigger" aria-expanded="false">
-          Services
+          Specialities
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="dropdown-panel">
-          <a href="index.html#services"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>All services</a>
+          <a href="index.html#services"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>All Specialities</a>
           <a href="glaucoma.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>Glaucoma</a>
           <a href="cataract.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/></svg></span>Cataract</a>
           <a href="diabeticRetinopathy.html"><span class="d-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></span>Diabetic Retinopathy</a>
@@ -406,29 +500,42 @@
     <div class="footer-grid">
       <div>
         <div class="logo" style="margin-bottom:18px;">
-          <span class="mark"></span>
-          <div class="logo-text"><b style="color:var(--paper);">Dr. Raja</b><span>Super Specialty Eye Care</span></div>
+          <!-- <span class="mark"></span> -->
+         <div class="logo">
+    <img src="images/logo.png" alt="Dr. Raja Super Specialty Eye Care Logo" class="logo-img">
+</div>
         </div>
-        <p>Dr. Rahul Raja Achlerkar &middot; M.B.B.S., D.N.B., F.A.E.H.<br>Specialized in Advanced Cataract &amp; Glaucoma</p>
+        <p>Dr. Rahul Raja Achlerkar · M.B.B.S., D.N.B., F.A.E.H.<br>Specialized in Advanced Cataract &amp; Glaucoma</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
       </div>
       <div>
         <h4>Contact us</h4>
         <ul>
-          <li>+91 8104441581 &middot; 8356076193</li>
+          <li>+91 8104441581 · 8356076193</li>
           <li>rajaeyecare18@gmail.com</li>
           <li>Office 2 &amp; 3, 1st Floor, Goodwill Arcade,<br>Station Road, Sector 10, Nerul West,<br>Navi Mumbai, Maharashtra 400706</li>
         </ul>
       </div>
       <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="index.html#services">All services</a></li>
-          <li><a href="index.html#doctors">Our doctors</a></li>
-          <li><a href="index.html#appointment">Book appointment</a></li>
-        </ul>
+        <h4>Get in touch</h4>
+        <div class="map-box">
+           <iframe
+            src="https://maps.google.com/maps?q=OFFICE%20NO%202%20%26%203,%201st%20FLOOR,%20GOODWILL%20ARCADE,%20STATION%20ROAD,%20SECTOR%2010,%20NERUL%20WEST,%20NAVI%20MUMBAI,%20MAHARASHTRA%20400706&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="220"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
       </div>
     </div>
-    <div class="bottom-bar">&copy; 2026 All Rights Reserved &mdash; Dr. Raja Super Specialty Eye Hospital</div>
+    <div class="bottom-bar">© 2026 All Rights Reserved — Dr. Raja Super Specialty Eye Hospital</div>
   </div>
 </footer>
 
