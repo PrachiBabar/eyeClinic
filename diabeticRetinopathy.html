@@ -100,7 +100,7 @@
   .d-hero p.lead{max-width:480px; margin:20px 0 30px; color:var(--ink); font-size:1.02rem;}
   .d-hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
   .d-hero-visual{position:relative;}
-  .d-hero-visual img{border-radius:20px; aspect-ratio:4/3; object-fit:cover; box-shadow:var(--shadow); border:1px solid rgba(250,247,241,0.15);}
+  .d-hero-visual img{border-radius:20px; aspect-ratio:5/3; object-fit:cover; box-shadow:var(--shadow); border:1px solid rgba(250,247,241,0.15);}
   .d-hero-badge{position:absolute; bottom:-18px; left:-18px; background:var(--paper); color:var(--ink); border-radius:16px; padding:14px 18px; box-shadow:var(--shadow); font-family:'JetBrains Mono',monospace; font-size:0.74rem; max-width:200px;}
   .d-hero-badge b{display:block; font-family:'Fraunces',serif; font-size:1rem; color:var(--clay); margin-bottom:2px;}
 
@@ -172,7 +172,7 @@
   .care-tab-btn.active{background:var(--teal-deep); color:var(--paper); border-color:var(--teal-deep);}
   .care-panel{display:none;}
   .care-panel.active{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start;}
-  .care-panel img{border-radius:18px; aspect-ratio:4/3; object-fit:cover;}
+  .care-panel img{border-radius:18px; aspect-ratio:3/3; object-fit:cover;}
   .care-panel ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
   .care-panel li{display:flex; gap:12px; align-items:flex-start; font-size:0.93rem; color:#374039;}
   .care-panel li .num{font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--iris-gold); flex-shrink:0; margin-top:2px;}
@@ -285,6 +285,51 @@ footer ul{
     color:var(--ink);
 }
 
+.types-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.type-card{
+    background:#fff;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:20px;
+    padding:20px;
+    transition:.35s ease;
+    overflow:hidden;
+}
+
+.type-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.type-image{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:14px;
+    margin-bottom:18px;
+}
+
+.type-num{
+    display:inline-block;
+    font-size:14px;
+    font-weight:700;
+    color:#008080;
+    margin-bottom:10px;
+}
+
+.type-card h3{
+    margin:0 0 10px;
+}
+
+.type-card p{
+    margin:0;
+    line-height:1.7;
+}
+
 .socials{display:flex; gap:12px; margin-top:16px;}
   .socials a{
     width:38px;height:38px;border-radius:50%; border:1px solid rgba(250,247,241,0.25); display:flex; align-items:center; justify-content:center;
@@ -324,6 +369,51 @@ footer ul{
   @media (max-width:360px){
     .nav-cta .btn{padding:7px 8px !important; font-size:0.68rem;}
   }
+
+  .why-layout{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.why-image img{
+    width:100%;
+    height:100%;
+    min-height:580px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.why-item.full{
+    grid-column:1 / -1;
+}
+
+@media (max-width:992px){
+
+    .why-layout{
+        grid-template-columns:1fr;
+    }
+
+    .why-image img{
+        min-height:350px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-item.full{
+        grid-column:auto;
+    }
+}
 </style>
 </head>
 <body>
@@ -383,7 +473,7 @@ footer ul{
       </div>
     </div>
     <div class="d-hero-visual">
-      <img src="https://picsum.photos/seed/dr-hero/560/420" alt="Retinal scan comparing healthy and diabetic retina">
+      <img src="images/diabeticRetinopathy/diabetics.jpg" alt="Retinal scan comparing healthy and diabetic retina">
       <div class="d-hero-badge"><b>Annual</b>screening is recommended for everyone with diabetes.</div>
     </div>
   </div>
@@ -399,7 +489,7 @@ footer ul{
       <div class="note-box"><b>Note:</b> Early diabetic retinopathy often has no symptoms, making regular diabetic eye screenings extremely important.</div>
     </div>
     <div class="img-col">
-      <img src="https://picsum.photos/seed/dr-vessels/560/450" alt="Illustration of damaged blood vessels in the retina">
+      <img src="images/diabeticRetinopathy/diabetic.jpg" alt="Illustration of damaged blood vessels in the retina">
     </div>
   </div>
 </section>
@@ -433,13 +523,59 @@ footer ul{
       <p class="eyebrow" style="justify-content:center;">How it progresses</p>
       <h2>Types of Diabetic Retinopathy</h2>
     </div>
+
     <div class="types-grid">
-      <div class="type-card"><span class="type-num">01</span><h3>Mild NPDR</h3><p>The earliest stage — tiny microaneurysms form in retinal blood vessels and may leak small amounts of fluid.</p></div>
-      <div class="type-card"><span class="type-num">02</span><h3>Moderate NPDR</h3><p>Some retinal blood vessels become blocked, reducing blood supply to the retina.</p></div>
-      <div class="type-card"><span class="type-num">03</span><h3>Severe NPDR</h3><p>Many blood vessels become blocked, reducing oxygen supply and signalling new vessel growth.</p></div>
-      <div class="type-card" style="background:#FBEFE9; border-color:rgba(180,82,47,0.3);"><span class="type-num" style="color:var(--clay);">04</span><h3>Proliferative DR (PDR)</h3><p>The most advanced stage — fragile new vessels can bleed, cause retinal detachment, and permanent vision loss if untreated.</p></div>
-      <div class="type-card"><span class="type-num">05</span><h3>Diabetic Macular Edema (DME)</h3><p>Fluid accumulates in the macula, the retina's central part responsible for sharp vision, causing blurred central vision.</p></div>
-      <div class="type-card" style="background:var(--teal-deep); border-color:var(--teal-deep);"><span class="type-num" style="color:var(--iris-gold);">✓</span><h3 style="color:var(--paper);">Know your stage</h3><p style="color:rgba(250,247,241,0.8);">OCT and fundus imaging pinpoint exactly where you stand.</p></div>
+
+      <!-- Mild NPDR -->
+      <div class="type-card">
+        <img src="images/diabeticRetinopathy/Mild NPDR.png" alt="Mild NPDR" class="type-image">
+        <span class="type-num">01</span>
+        <h3>Mild NPDR</h3>
+        <p>The earliest stage — tiny microaneurysms form in retinal blood vessels and may leak small amounts of fluid.</p>
+      </div>
+
+      <!-- Moderate NPDR -->
+      <div class="type-card">
+        <img src="images/diabeticRetinopathy/Moderate NPDR.png" alt="Moderate NPDR" class="type-image">
+        <span class="type-num">02</span>
+        <h3>Moderate NPDR</h3>
+        <p>Some retinal blood vessels become blocked, reducing blood supply to the retina.</p>
+      </div>
+
+      <!-- Severe NPDR -->
+      <div class="type-card">
+        <img src="images/diabeticRetinopathy/Severe NPDR.png" alt="Severe NPDR" class="type-image">
+        <span class="type-num">03</span>
+        <h3>Severe NPDR</h3>
+        <p>Many blood vessels become blocked, reducing oxygen supply and signalling new vessel growth.</p>
+      </div>
+
+      <!-- PDR -->
+      <div class="type-card" style="background:#FBEFE9; border-color:rgba(180,82,47,0.3);">
+        <img src="images/diabeticRetinopathy/PDR.png" alt="Proliferative Diabetic Retinopathy" class="type-image">
+        <span class="type-num" style="color:var(--clay);">04</span>
+        <h3>Proliferative DR (PDR)</h3>
+        <p>The most advanced stage — fragile new vessels can bleed, cause retinal detachment, and permanent vision loss if untreated.</p>
+      </div>
+
+      <!-- DME -->
+      <div class="type-card">
+        <img src="images/diabeticRetinopathy/DME.png" alt="Diabetic Macular Edema" class="type-image">
+        <span class="type-num">05</span>
+        <h3>Diabetic Macular Edema (DME)</h3>
+        <p>Fluid accumulates in the macula, the retina's central part responsible for sharp vision, causing blurred central vision.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="type-card" style="background:var(--teal-deep); border-color:var(--teal-deep);">
+       
+        <span class="type-num" style="color:var(--iris-gold);">✓</span>
+        <h3 style="color:var(--paper);">Know your stage</h3>
+        <p style="color:rgba(250,247,241,0.8);">
+          OCT and fundus imaging pinpoint exactly where you stand.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -505,13 +641,13 @@ footer ul{
       <h2>Pre-Procedure, Post-Procedure &amp; Long-Term Care</h2>
     </div>
     <div class="care-tabs">
-      <button class="care-tab-btn active" data-tab="pre">Before your procedure</button>
-      <button class="care-tab-btn" data-tab="post">After your procedure</button>
-      <button class="care-tab-btn" data-tab="recovery">Long-term care</button>
+      <button class="care-tab-btn active" data-tab="pre">Pre-procedure Care</button>
+      <button class="care-tab-btn" data-tab="post">Post-procedure Care</button>
+      <button class="care-tab-btn" data-tab="recovery">Recovery Care</button>
     </div>
 
     <div class="care-panel active" id="tab-pre">
-      <img src="https://picsum.photos/seed/drpreop/560/420" alt="Pre-procedure retinal evaluation for diabetic retinopathy">
+      <img src="images/diabeticRetinopathy/Pre Operative Care.jpeg" alt="Pre-procedure retinal evaluation for diabetic retinopathy">
       <ul>
         <li><span class="num">01</span>Undergo a comprehensive retinal evaluation, including OCT, Fundus Photography, and other tests as advised.</li>
         <li><span class="num">02</span>Inform your retina specialist about your diabetes control, medical history, allergies, and medications.</li>
@@ -524,7 +660,7 @@ footer ul{
     </div>
 
     <div class="care-panel" id="tab-post">
-      <img src="https://picsum.photos/seed/drpostop/560/420" alt="Follow-up appointment after diabetic retinopathy treatment">
+      <img src="images/diabeticRetinopathy/Post Operative Care.jpeg" alt="Follow-up appointment after diabetic retinopathy treatment">
       <ul>
         <li><span class="num">01</span>Use all prescribed eye drops and medications exactly as directed.</li>
         <li><span class="num">02</span>Avoid rubbing or pressing on the treated eye.</li>
@@ -538,7 +674,7 @@ footer ul{
     </div>
 
     <div class="care-panel" id="tab-recovery">
-      <img src="https://picsum.photos/seed/drrecovery/560/420" alt="Doctor reviewing long-term diabetic eye care plan with a patient">
+      <img src="images/diabeticRetinopathy/Recovery Care.jpeg" alt="Doctor reviewing long-term diabetic eye care plan with a patient">
       <ul>
         <li><span class="num">01</span>Maintain strict control of blood sugar, blood pressure, and cholesterol.</li>
         <li><span class="num">02</span>Follow a healthy lifestyle with regular exercise and a balanced diet.</li>
@@ -549,19 +685,78 @@ footer ul{
   </div>
 </section>
 
-<section>
+<section id="why-choose">
   <div class="wrap">
+
     <div class="section-head">
       <p class="eyebrow" style="justify-content:center;">Why patients choose us</p>
       <h2>Why Choose Dr. Raja Eye Care for Diabetic Retinopathy?</h2>
     </div>
-    <div class="why-grid">
-      <div class="why-item"><div class="why-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div><div><h4>Expert retina specialists</h4><p>Advanced care for diabetes-related eye complications.</p></div></div>
-      <div class="why-item"><div class="why-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div><h4>Advanced retinal diagnostics</h4><p>OCT, Fundus Photography, and detailed retinal evaluation.</p></div></div>
-      <div class="why-item"><div class="why-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Modern treatment options</h4><p>Intravitreal injections, laser therapy, and vitreoretinal procedures.</p></div></div>
-      <div class="why-item"><div class="why-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h4>Early detection &amp; monitoring</h4><p>To prevent vision-threatening complications.</p></div></div>
-      <div class="why-item" style="grid-column:span 2;"><div class="why-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div><h4>Comprehensive diabetic eye care</h4><p>Focused on preserving vision and improving long-term eye health.</p></div></div>
+
+    <div class="why-layout">
+
+      <!-- Left Image -->
+      <div class="why-image">
+        <img src="images/diabeticRetinopathy/Dr. Rahul Surgical Image.jpg" alt="Retina Specialist Examining Patient">
+      </div>
+
+      <!-- Right Content -->
+      <div class="why-grid">
+
+        <div class="why-item">
+          <div class="why-ic">
+            <!-- icon -->
+          </div>
+          <div>
+            <h4>Expert retina specialists</h4>
+            <p>Advanced care for diabetes-related eye complications.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-ic">
+            <!-- icon -->
+          </div>
+          <div>
+            <h4>Advanced retinal diagnostics</h4>
+            <p>OCT, Fundus Photography, and detailed retinal evaluation.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-ic">
+            <!-- icon -->
+          </div>
+          <div>
+            <h4>Modern treatment options</h4>
+            <p>Intravitreal injections, laser therapy, and vitreoretinal procedures.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-ic">
+            <!-- icon -->
+          </div>
+          <div>
+            <h4>Early detection & Monitoring</h4>
+            <p>To prevent vision-threatening complications.</p>
+          </div>
+        </div>
+
+        <div class="why-item full">
+          <div class="why-ic">
+            <!-- icon -->
+          </div>
+          <div>
+            <h4>Comprehensive diabetic eye care</h4>
+            <p>Focused on preserving vision and improving long-term eye health.</p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 </section>
 
