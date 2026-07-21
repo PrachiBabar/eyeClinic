@@ -159,6 +159,12 @@
   .tech-card ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;}
   .tech-card li{font-size:0.86rem; color:rgba(250,247,241,0.9); display:flex; gap:8px;}
   .tech-card li::before{content:"✦"; color:var(--iris-gold);}
+  .tech-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
 
   /* ---------- SURGERY GRID ---------- */
   .surgery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
@@ -290,6 +296,69 @@ footer ul{
 }
 
 
+.type-card{
+    background:#fff;
+    border:1px solid #e8ecef;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.35s ease;
+}
+
+.type-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+}
+
+.type-img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+.type-card h3,
+.type-card p,
+.type-card .type-num{
+    padding-left:22px;
+    padding-right:22px;
+}
+
+.type-num{
+    display:inline-flex;
+    margin-top:18px;
+    margin-bottom:12px;
+}
+
+.type-card h3{
+    margin-bottom:12px;
+}
+
+.type-card p{
+    padding-bottom:24px;
+}
+
+.consultation-card{
+    background:var(--teal-deep);
+    border-color:var(--teal-deep);
+}
+
+.consultation-card h3{
+    color:var(--paper);
+}
+
+.consultation-card p{
+    color:rgba(250,247,241,.8);
+}
+
+.consultation-card .type-num{
+    color:var(--iris-gold);
+}
+
+.consultation-card .btn{
+    margin:0 22px 24px;
+}
+
+
 
   @media (max-width:980px){
     .d-hero .wrap{grid-template-columns:1fr;}
@@ -378,7 +447,7 @@ footer ul{
       </div>
     </div>
     <div class="d-hero-visual">
-      <img src="https://picsum.photos/seed/glaucomahero/560/420" alt="Ophthalmologist checking intraocular pressure with a tonometer">
+      <img src="images/glaucoma/Glaucoma.jpeg" alt="Ophthalmologist checking intraocular pressure with a tonometer">
       <div class="d-hero-badge"><b>Silent Thief</b>Early-stage glaucoma often shows no symptoms at all.</div>
     </div>
   </div>
@@ -394,7 +463,7 @@ footer ul{
       <div class="note-box"><b>Note:</b> Early-stage glaucoma usually has no symptoms — which is exactly why it's called the "Silent Thief of Sight."</div>
     </div>
     <div class="img-col">
-      <img src="https://picsum.photos/seed/glaucomaoptic/560/450" alt="Cross-section illustration of the eye showing the optic nerve">
+      <img src="images/glaucoma/glaucomaa.jpg" alt="Cross-section illustration of the eye showing the optic nerve">
     </div>
   </div>
 </section>
@@ -473,18 +542,51 @@ footer ul{
       <p class="eyebrow" style="justify-content:center;">Not all glaucoma is the same</p>
       <h2>Types of Glaucoma</h2>
     </div>
+
     <div class="types-grid">
-      <div class="type-card"><span class="type-num">01</span><h3>Primary Open-Angle Glaucoma</h3><p>The most common type. Develops slowly as the eye's drainage system becomes less efficient, raising eye pressure and gradually damaging the optic nerve.</p></div>
-      <div class="type-card"><span class="type-num">02</span><h3>Angle-Closure Glaucoma</h3><p>Occurs when the drainage angle becomes blocked, causing a rapid rise in eye pressure. A medical emergency requiring immediate treatment.</p></div>
-      <div class="type-card"><span class="type-num">03</span><h3>Normal-Tension Glaucoma</h3><p>Optic nerve damage occurs even though eye pressure stays within the normal range.</p></div>
-      <div class="type-card"><span class="type-num">04</span><h3>Congenital Glaucoma</h3><p>A rare condition present at birth, caused by abnormal development of the eye's drainage system.</p></div>
-      <div class="type-card"><span class="type-num">05</span><h3>Secondary Glaucoma</h3><p>Develops as a result of another eye condition, injury, inflammation, diabetes, or long-term steroid use.</p></div>
-      <div class="type-card" style="background:var(--teal-deep); border-color:var(--teal-deep);">
-        <span class="type-num" style="color:var(--iris-gold);">✓</span>
-        <h3 style="color:var(--paper);">Not sure which applies to you?</h3>
-        <p style="color:rgba(250,247,241,0.8);">A comprehensive eye exam identifies your exact type and stage.</p>
+
+      <div class="type-card">
+        <img src="images/glaucoma/Primary Open Angle Glaucoma.jpeg" alt="Primary Open Angle Glaucoma" class="type-img">
+        <span class="type-num">01</span>
+        <h3>Primary Open-Angle Glaucoma</h3>
+        <p>The most common type. Develops slowly as the eye's drainage system becomes less efficient, raising eye pressure and gradually damaging the optic nerve.</p>
+      </div>
+
+      <div class="type-card">
+        <img src="images/glaucoma/Angle Closure Glaucoma.jpeg" alt="Angle Closure Glaucoma" class="type-img">
+        <span class="type-num">02</span>
+        <h3>Angle-Closure Glaucoma</h3>
+        <p>Occurs when the drainage angle becomes blocked, causing a rapid rise in eye pressure. A medical emergency requiring immediate treatment.</p>
+      </div>
+
+      <div class="type-card">
+        <img src="images/glaucoma/Normal Tension Glaucoma.jpeg" alt="Normal Tension Glaucoma" class="type-img">
+        <span class="type-num">03</span>
+        <h3>Normal-Tension Glaucoma</h3>
+        <p>Optic nerve damage occurs even though eye pressure stays within the normal range.</p>
+      </div>
+
+      <div class="type-card">
+        <img src="images/glaucoma/Congenital Glaucoma.jpeg" alt="Congenital Glaucoma" class="type-img">
+        <span class="type-num">04</span>
+        <h3>Congenital Glaucoma</h3>
+        <p>A rare condition present at birth, caused by abnormal development of the eye's drainage system.</p>
+      </div>
+
+      <div class="type-card">
+        <img src="images/glaucoma/Secondary Glaucoma.jpeg" alt="Secondary Glaucoma" class="type-img">
+        <span class="type-num">05</span>
+        <h3>Secondary Glaucoma</h3>
+        <p>Develops as a result of another eye condition, injury, inflammation, diabetes, or long-term steroid use.</p>
+      </div>
+
+      <div class="type-card consultation-card">
+        <span class="type-num">✓</span>
+        <h3>Not sure which applies to you?</h3>
+        <p>A comprehensive eye exam identifies your exact type and stage.</p>
         <a href="index.html#appointment" class="btn" style="margin-top:14px; padding:10px 20px; font-size:0.82rem;">Book an evaluation</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -505,35 +607,44 @@ footer ul{
 
     <div class="laser-grid">
       <div class="laser-card">
-        <img src="https://picsum.photos/seed/slt2/500/320" alt="Laser trabeculoplasty procedure on the eye">
+        <!-- <img src="https://picsum.photos/seed/slt2/500/320" alt="Laser trabeculoplasty procedure on the eye"> -->
         <div class="laser-body"><h4>Selective Laser Trabeculoplasty (SLT)</h4><p>A minimally invasive laser treatment for open-angle glaucoma that improves the eye's natural drainage and helps lower intraocular pressure.</p></div>
       </div>
       <div class="laser-card">
-        <img src="https://picsum.photos/seed/yagpi2/500/320" alt="YAG laser iridotomy procedure on the eye">
+        <!-- <img src="https://picsum.photos/seed/yagpi2/500/320" alt="YAG laser iridotomy procedure on the eye"> -->
         <div class="laser-body"><h4>YAG Peripheral Iridotomy (YAG PI)</h4><p>Used primarily for angle-closure glaucoma. A tiny opening is created in the iris to improve fluid flow and relieve pressure inside the eye.</p></div>
       </div>
     </div>
 
-    <div class="tech-grid">
-      <div class="tech-card">
-        <h4>Optical Coherence Tomography (OCT)</h4>
-        <p class="desc">High-resolution cross-sectional imaging of the retina and optic nerve.</p>
-        <ul>
-          <li>Detects early retinal and optic nerve damage</li>
-          <li>Tracks disease progression</li>
-          <li>Guides diagnosis and treatment decisions</li>
-        </ul>
-      </div>
-      <div class="tech-card">
-        <h4>Visual Field Testing (Perimetry)</h4>
-        <p class="desc">Evaluates central and peripheral (side) vision loss.</p>
-        <ul>
-          <li>Detects functional vision changes</li>
-          <li>Monitors glaucoma progression and treatment effectiveness</li>
-          <li>Essential for long-term follow-up</li>
-        </ul>
-      </div>
-    </div>
+  <div class="tech-grid">
+
+  <div class="tech-card">
+    <img src="images/diabeticRetinopathy/OCT.jpg" alt="Optical Coherence Tomography (OCT)" class="tech-img">
+
+    <h4>Optical Coherence Tomography (OCT)</h4>
+    <p class="desc">High-resolution cross-sectional imaging of the retina and optic nerve.</p>
+
+    <ul>
+      <li>Detects early retinal and optic nerve damage</li>
+      <li>Tracks disease progression</li>
+      <li>Guides diagnosis and treatment decisions</li>
+    </ul>
+  </div>
+
+  <div class="tech-card">
+    <img src="images/diabeticRetinopathy/Perimetry (1).png" alt="Visual Field Testing (Perimetry)" class="tech-img">
+
+    <h4>Visual Field Testing (Perimetry)</h4>
+    <p class="desc">Evaluates central and peripheral (side) vision loss.</p>
+
+    <ul>
+      <li>Detects functional vision changes</li>
+      <li>Monitors glaucoma progression and treatment effectiveness</li>
+      <li>Essential for long-term follow-up</li>
+    </ul>
+  </div>
+
+</div>
   </div>
 </section>
 
