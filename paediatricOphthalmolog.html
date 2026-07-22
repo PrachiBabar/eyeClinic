@@ -325,6 +325,32 @@ footer ul{
   @media (max-width:360px){
     .nav-cta .btn{padding:7px 8px !important; font-size:0.68rem;}
   }
+
+  .symptom-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.symptom-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:18px;
+    line-height:1.6;
+}
+
+.symptom-list li img{
+    width:68px;
+    height:68px;
+    object-fit:contain;
+    flex-shrink:0;
+    margin-top:2px;
+}
+
+.symptom-list li span{
+    flex:1;
+}
 </style>
 </head>
 <body>
@@ -432,28 +458,78 @@ footer ul{
       <h2>Symptoms to Watch For</h2>
       <p>Seek an eye examination if your child shows any of the following.</p>
     </div>
+
     <div class="symptom-cols">
+
+      <!-- Behavioural Signs -->
       <div class="symptom-card">
         <h3>Behavioural signs</h3>
-        <ul>
-          <li>Frequent eye rubbing</li>
-          <li>Squinting or closing one eye</li>
-          <li>Holding books or screens very close</li>
-          <li>Frequent headaches due to eye strain</li>
-          <li>Poor performance at school related to vision</li>
+
+        <ul class="symptom-list">
+          <li>
+            <img src="images/Paediatric Oph/Sensitivity to light (Cornea).jpeg" alt="">
+            <span>Frequent eye rubbing</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/Squint.jpeg" alt="">
+            <span>Squinting or closing one eye</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/White reflex.jpeg" alt="">
+            <span>Holding books or screens very close</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/Redness aur swollen.jpeg" alt="">
+            <span>Frequent headaches due to eye strain</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/Excessive tearing or watering.jpeg" alt="">
+            <span>Poor performance at school related to vision</span>
+          </li>
         </ul>
       </div>
+
+      <!-- Visible Signs -->
       <div class="symptom-card">
         <h3>Visible signs</h3>
-        <ul>
-          <li>Misaligned eyes (crossed or wandering eyes)</li>
-          <li>Difficulty seeing distant or near objects</li>
-          <li>Excessive tearing or watery eyes</li>
-          <li>Red or swollen eyes</li>
-          <li>Sensitivity to light</li>
-          <li>White reflex in the pupil</li>
+
+        <ul class="symptom-list">
+          <li>
+            <img src="images/Paediatric Oph/Misaligned.jpeg" alt="">
+            <span>Misaligned eyes (crossed or wandering eyes)</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/Difficulty seeing in distant or near obj.jpeg" alt="">
+            <span>Difficulty seeing distant or near objects</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/Excessive tearing or watering.jpeg" alt="">
+            <span>Excessive tearing or watery eyes</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/Redness aur swollen.jpeg" alt="">
+            <span>Red or swollen eyes</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/Sensitivity to light (Cornea).jpeg" alt="">
+            <span>Sensitivity to light</span>
+          </li>
+
+          <li>
+            <img src="images/Paediatric Oph/White reflex.jpeg" alt="">
+            <span>White reflex in the pupil</span>
+          </li>
         </ul>
       </div>
+
     </div>
   </div>
 </section>
