@@ -123,7 +123,7 @@
   .emergency-flag{display:inline-block; margin-left:8px; font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.06em; background:var(--clay); color:var(--paper); padding:3px 9px; border-radius:100px; vertical-align:middle;}
 
   /* ---------- TYPES GRID ---------- */
-  .types-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .types-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
   .type-card{background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; transition:transform .25s ease, box-shadow .25s ease;}
   .type-card:hover{transform:translateY(-5px); box-shadow:var(--shadow);}
   .type-num{font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--iris-gold); letter-spacing:0.08em;}
@@ -325,6 +325,81 @@ footer ul{
   @media (max-width:360px){
     .nav-cta .btn{padding:7px 8px !important; font-size:0.68rem;}
   }
+
+  .type-card{
+    position: relative;
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.type-card:hover{
+    transform:translateY(-8px);
+}
+
+.type-image{
+    width:150px;
+    height:120px;
+    object-fit:contain;
+    margin:0 auto 18px;
+    display:block;
+}
+
+.type-num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#0d9488;
+    color:#fff;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.type-card h3{
+    margin-bottom:10px;
+}
+
+.type-card p{
+    color:#666;
+    line-height:1.6;
+}
+
+.surgery-card{
+    background:#fff;
+    border-radius:18px;
+    padding:24px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:all .3s ease;
+}
+
+.surgery-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.surgery-image{
+    width:140px;
+    height:110px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 18px;
+}
+
+.s-tag{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:14px;
+}
 </style>
 </head>
 <body>
@@ -399,7 +474,7 @@ footer ul{
       <div class="note-box"><b>Good to know:</b> A comprehensive eye examination is essential to determine the most suitable laser procedure for your eyes.</div>
     </div>
     <div class="img-col">
-      <img src="https://picsum.photos/seed/lasikcornea/560/450" alt="Diagram of laser reshaping the cornea during LASIK">
+      <img src="images/lasik/lasikk.jpg" alt="Diagram of laser reshaping the cornea during LASIK">
     </div>
   </div>
 </section>
@@ -410,11 +485,41 @@ footer ul{
       <p class="eyebrow" style="justify-content:center;">What LASIK corrects</p>
       <h2>Types of Refractive Error</h2>
     </div>
+
     <div class="types-grid">
-      <div class="type-card"><span class="type-num">01</span><h3>Myopia</h3><p>Nearsightedness — near objects are clear but distant objects appear blurred.</p></div>
-      <div class="type-card"><span class="type-num">02</span><h3>Hyperopia</h3><p>Farsightedness — distant objects are clearer than near objects.</p></div>
-      <div class="type-card"><span class="type-num">03</span><h3>Astigmatism</h3><p>An irregularly shaped cornea or lens causing blurred vision at all distances.</p></div>
-      <div class="type-card"><span class="type-num">04</span><h3>Presbyopia</h3><p>An age-related loss of near focusing ability, usually after age 40.</p></div>
+
+      <!-- Myopia -->
+      <div class="type-card">
+        <img src="images/lasik/Myopia.jpeg" alt="Myopia" class="type-image">
+        <!-- <span class="type-num">01</span> -->
+        <h3>Myopia</h3>
+        <p>Nearsightedness — near objects are clear but distant objects appear blurred.</p>
+      </div>
+
+      <!-- Hyperopia -->
+      <div class="type-card">
+        <img src="images/lasik/Hyperopia.jpeg" alt="Hyperopia" class="type-image">
+        <!-- <span class="type-num">02</span> -->
+        <h3>Hyperopia</h3>
+        <p>Farsightedness — distant objects are clearer than near objects.</p>
+      </div>
+
+      <!-- Astigmatism -->
+      <div class="type-card">
+        <img src="images/lasik/Astigmatism.jpeg" alt="Astigmatism" class="type-image">
+        <!-- <span class="type-num">03</span> -->
+        <h3>Astigmatism</h3>
+        <p>An irregularly shaped cornea or lens causing blurred vision at all distances.</p>
+      </div>
+
+      <!-- Presbyopia -->
+      <div class="type-card">
+        <img src="images/lasik/Presbyopia.jpeg" alt="Presbyopia" class="type-image">
+        <!-- <span class="type-num">04</span> -->
+        <h3>Presbyopia</h3>
+        <p>An age-related loss of near focusing ability, usually after age 40.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -446,13 +551,59 @@ footer ul{
       <p class="eyebrow" style="justify-content:center;">Choosing your procedure</p>
       <h2>Types of LASIK &amp; Laser Vision Correction</h2>
     </div>
+
     <div class="surgery-grid">
-      <div class="surgery-card"><span class="s-tag">Standard</span><h3>Standard LASIK</h3><p>Reshapes the cornea after creating a thin corneal flap. Excellent visual outcomes for common refractive errors.</p></div>
-      <div class="surgery-card"><span class="s-tag">Personalized</span><h3>Contoura LASIK</h3><p>Topography-guided treatment personalized to your cornea's unique shape — sharper vision, less glare and halos.</p></div>
-      <div class="surgery-card"><span class="s-tag">Flap-free</span><h3>PRK</h3><p>The corneal epithelium is gently removed before reshaping. Good for thin corneas or contact-sport athletes.</p></div>
-      <div class="surgery-card"><span class="s-tag">No-touch</span><h3>TransPRK</h3><p>An advanced surface procedure performed entirely by laser, without a flap or manual epithelium removal.</p></div>
-      <div class="surgery-card"><span class="s-tag">Bladeless</span><h3>Femto LASIK</h3><p>A femtosecond laser creates the corneal flap instead of a blade — exceptional precision and faster recovery.</p></div>
-      <div class="surgery-card" style="background:var(--teal-deep); color:var(--paper); border-color:var(--teal-deep);"><span class="s-tag" style="color:var(--iris-gold);">Your fit</span><h3 style="color:var(--paper);">Not sure which suits you?</h3><p style="color:rgba(250,247,241,0.8);">Your evaluation results determine the safest, most effective option.</p></div>
+
+      <!-- Standard LASIK -->
+      <div class="surgery-card">
+        <img src="images/lasik/Standard lasik.jpeg" alt="Standard LASIK" class="surgery-image">
+        <!-- <span class="s-tag">Standard</span>c:\Users\Prachi\Downloads\lasikk.jpg -->
+        <h3>Standard LASIK</h3>
+        <p>Reshapes the cornea after creating a thin corneal flap. Excellent visual outcomes for common refractive errors.</p>
+      </div>
+
+      <!-- Contoura LASIK -->
+      <div class="surgery-card">
+        <img src="images/lasik/Contoura lasik.jpeg" alt="Contoura LASIK" class="surgery-image">
+        <!-- <span class="s-tag">Personalized</span> -->
+        <h3>Contoura LASIK</h3>
+        <p>Topography-guided treatment personalized to your cornea's unique shape — sharper vision, less glare and halos.</p>
+      </div>
+
+      <!-- PRK -->
+      <div class="surgery-card">
+        <img src="images/lasik/PRK.jpeg" alt="PRK" class="surgery-image">
+        <!-- <span class="s-tag">Flap-free</span> -->
+        <h3>PRK</h3>
+        <p>The corneal epithelium is gently removed before reshaping. Good for thin corneas or contact-sport athletes.</p>
+      </div>
+
+      <!-- TransPRK -->
+      <div class="surgery-card">
+        <img src="images/lasik/TransPRK.jpeg" alt="TransPRK" class="surgery-image">
+        <!-- <span class="s-tag">No-touch</span> -->
+        <h3>TransPRK</h3>
+        <p>An advanced surface procedure performed entirely by laser, without a flap or manual epithelium removal.</p>
+      </div>
+
+      <!-- Femto LASIK -->
+      <div class="surgery-card">
+        <img src="images/lasik/FemtoLASIK.jpeg" alt="Femto LASIK" class="surgery-image">
+        <!-- <span class="s-tag">Bladeless</span> -->
+        <h3>Femto LASIK</h3>
+        <p>A femtosecond laser creates the corneal flap instead of a blade — exceptional precision and faster recovery.</p>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="surgery-card"
+        style="background:var(--teal-deep); color:var(--paper); border-color:var(--teal-deep);">
+        <span class="s-tag" style="color:var(--iris-gold);">Your Fit</span>
+        <h3 style="color:var(--paper);">Not sure which suits you?</h3>
+        <p style="color:rgba(250,247,241,0.8);">
+          Your evaluation results determine the safest, most effective option.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
